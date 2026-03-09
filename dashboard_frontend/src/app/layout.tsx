@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AppProviders } from "@/app/providers";
 
 export const metadata: Metadata = {
-  title: "Minimal Next.js App",
-  description: "Ultra-minimal Next.js application",
+  title: "Enterprise Analytics Platform",
+  description:
+    "Multi-tenant analytics dashboards with widgets, RBAC, admin panel, and audit logs.",
 };
 
 export default function RootLayout({
@@ -14,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        {children}
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );
